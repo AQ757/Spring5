@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+        <!--    第一种注入  常量注入-->
+     <bean id="student" class="com.aitqiao.pojo.Student">
+         <property name="name" value="麦蔻"/>
+         <!--    第二种注入 Bean注入-->
+         <property name="address" ref="addr"/>
+
+            <!--    数组注入-->
+         <property name="books">
+             <array>
+                 <value>百科全书</value>
+                 <value>百科</value>
+                 <value>全书</value>
+             </array>
+         </property>
+
+         <!--    List注入 -->
+         <property name="hobby">
+             <list>
+                 <value>健身</value>
+                 <value>吃饭</value>
+                 <value>睡觉</value>
+             </list>
+         </property>
+
+         <!--   Mao注入   -->
+         <property name="card" >
+             <map>
+                 <entry key="身份证" value="090090909090"/>
+                 <entry key="银行卡" value="66666334343346"/>
+             </map>
+         </property>
+
+        <!--   Set集合注入  -->
+         <property name="games">
+             <set>
+                 <value>LOL</value>
+                 <value>BOB</value>
+                 <value>COC</value>
+             </set>
+         </property>
+
+         <!--  Null注入  -->
+         <property name="wife"><null/></property>
+
+         <!-- Properties注入     properties（属性） -->
+         <property name="info">
+             <props>
+                 <prop key="学号">2018120161</prop>
+                 <prop key="password">root</prop>
+                 <prop key="username">QiaoWenQiang</prop>
+             </props>
+         </property>
+     </bean>
+
+
+    <bean id="addr" class="com.aitqiao.pojo.Address">
+        <property name="address" value="重庆"/>
+    </bean>
+</beans>
